@@ -1,3 +1,15 @@
+FORMAT SPECIFIERS = (value:flags) they format a value based on what flags are inserted
+
+
+.(number)f   - round to that many decimals places (fixed point)
+:(number) - allocate that many places
+:03 - allocate 0 and pad that many placces e.g 000455
+:< -  left justify
+:> -  right justify
+:^ -  center align
+:+ -  use a plus sign to indicate positive value
+:= -  place sign to left most position 
+:, -  comma separator. 
 
 
 
