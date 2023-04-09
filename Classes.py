@@ -4,10 +4,16 @@ Heres an example of a simple class definition in Python:
 
 
 
+    Note -> Class variables are defined outside the constructor and are normary given a default value that is applied to all instances of created of the class
+         -> Instance variables are created inside the constructor and normary get their vaue from paramtrs received by the constructor.
+    
 
 class Person:
+    
+    race = "human"  ---> Classs variable 
+    
     def __init__(self, name, age):
-        self.name = name
+        self.name = name   ---> Instance variable
         self.age = age
 
     def say_hello(self):
