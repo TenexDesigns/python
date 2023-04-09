@@ -77,6 +77,126 @@ with open(path, 'a') as file
 
 
 
+TO COPY A FILE
+
+There are many ways to copy files in python but in this tutorial we are going to use the shitil module . 
+The shutil method has three important mehods
+
+
+copyfile()  - copies contents of a file
+copy() - Does what copyfile does + permission mode + destination can be a directory
+copy2() - does what copy() does + copiesmetadata(files creation and modification time)
+
+
+
+
+
+
+
+
+
+import shutil
+
+shutil.copyfile(#src, #destination)
+
+  
+shutil.copy(#src, #destination)
+shutil.copy2(#src, #destination)
+  
+
+
+
+TO MOVE FILES IN PYTHON
+
+
+import os
+
+source="C:\\Users\\USER\\Downloads\books.txt"
+sestination="C:\\Users\\USER\\books.txt"
+
+
+//TO avoid any errors ,let us put our code in a try block.
+
+
+
+try:
+// To avoid overwritting on any files , Let us check if the file we want to move already exists 
+   if os.path.exists(destination):
+         print("There is already a file there")
+         
+   else:
+        os.replace(source,destination)
+        print(source + " was moved")
+
+
+error FileNotFoundError:
+      print(source +" was not found")
+
+      
+      // We can do the same for a folder
+
+
+
+      
+      TO DELETE A FILE
+
+IMPORT OS
+
+
+path = "C:\\Users\\USER\\books.txt"
+
+os.remove(path )
+
+
+We can wrap the above code in a try block to avoid any errors
+
+
+try:
+    os.remove(path)
+
+except  FileNotFoundError:
+        print("That file was not found")
+
+
+
+
+
+
+
+The above function will not delete a directory that is empty.
+To delete an empty directory, we use the command  os.rmdir()
+
+
+
+try:
+    os.rmdir(path)
+    print(path +" was deleted")
+
+except  FileNotFoundError:
+        print("That file was not found")
+        
+except PermissionEror:
+       print ("You do not have persmiiison to delete that")
+
+
+
+
+To delete a directory that contains files we use the shutil libray 
+i.e shutil.rmtree() -> This is considered a dangerous function as it removes all the files in that directory.
+
+
+import shutil
+
+
+path =  "C:\\Users\\USER\\books.txt"
+
+
+
+try:
+     shutil.rmtree(path)
+     
+exept OSError:
+      print("You can't delete using that function")
 
 
 
@@ -89,4 +209,82 @@ with open(path, 'a') as file
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..
 
